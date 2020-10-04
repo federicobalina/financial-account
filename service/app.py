@@ -1,11 +1,13 @@
 import marshmallow
 import threading
 from flask import Flask, request
+from flask_cors import CORS
 
 from schemas import Transaction as TransactionSchema
 from domain import Transaction, Account, NegativeBalance
 
 app = Flask(__name__)
+CORS(app)
 account = Account()
 transaction_schema = TransactionSchema()
 sem = threading.Semaphore()
