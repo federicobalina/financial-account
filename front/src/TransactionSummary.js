@@ -3,13 +3,14 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import RefreshIcon from '@material-ui/icons/Refresh';
 import TransactionPanel from './TransactionPanel.js';
+import { API_URL } from './config.js';
 
 
 const TransactionSummary = () => {
   const [transactions, setTransactions] = useState([]);
 
   const fetchTransactions = async () => {
-    const response = await fetch('http://localhost:5000/transactions');
+    const response = await fetch(`${API_URL}/transactions`);
     const data = await response.json();
     setTransactions(data.transactions);
   };
