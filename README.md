@@ -10,7 +10,6 @@ python -m venv env
 
 ## Activate Virtual environment
 
-Execute the activate script inside env/Scripts
 ./env/Scripts/activate
 
 ## Install requirements
